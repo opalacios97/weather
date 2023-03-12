@@ -136,5 +136,19 @@ let loadWeekForecastData = (data = weather_data) => {
 }
 
 
-loadDayForecastData();
-loadWeekForecastData();
+
+
+document.addEventListener("DOMContentLoaded", (event) => {
+    //Código a ejecutar
+
+    loadDayForecastData();
+
+    let element = document.getElementById("loadinfo");
+
+    element.addEventListener('click', (event) => {
+        //Código a ejecutar
+        loadWeekForecastData();
+    });
+
+    
+});
