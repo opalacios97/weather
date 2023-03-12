@@ -28,7 +28,7 @@ export let weather_data = [
 				"text": "Mañana",
 				"date": "Febrero, 12, 2023",
 				"temperature": {
-					"min": "24 ℃",
+					"min": "25 ℃",
 					"max": "31 ℃"
 				},
 				"icon": "water_drop"

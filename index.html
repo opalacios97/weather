@@ -80,26 +80,26 @@
 
                     <div class="d-flex justify-content-between mt-2 mb-2">
                       <div class="me-4 d-flex text-golden">
-                        <i class="material-icons">location_on</i><h5 id="city" class="text-golden">Guayaquil<!-- city --> </h5>
+                        <i class="material-icons">location_on</i><h5 id="city" class="text-golden"><!-- city --> </h5>
                       </div>
                       <div>
-                        <h5 id="date" class="text-golden text-sm  opacity-8 mb-0">4-Mar-2023<!-- date --> </h5>
+                        <h5 id="date" class="text-golden text-sm  opacity-8 mb-0"><!-- date --> </h5>
                       </div>
                     </div>
                     
-                    <h2 class="text-golden text-center mt-4 mb-4 pb-2"><span id="maxtemperature">31 °C<!-- maxtemperature --></span> |  <span id="mintemperature" class="opacity-6 mx-2">25 °C<!-- mintemperature --></span></h2>
+                    <h2 class="text-golden text-center mt-4 mb-4 pb-2"><span id="maxtemperature"><!-- maxtemperature --></span> |  <span id="mintemperature" class="opacity-6 mx-2"><!-- mintemperature --></span></h2>
                     <div class="d-flex justify-content-between">
                       <div class="me-4">
                         <p class="text-golden text-sm opacity-8 mb-0">Nubosidad</p>
-                        <h6 id="cloudiness" class="text-golden mb-0">60%<!-- cloudiness --></h6>
+                        <h6 id="cloudiness" class="text-golden mb-0"><!-- cloudiness --></h6>
                       </div>
                       <div class="me-4">
                         <p class="text-golden text-sm opacity-8 mb-0">Viento</p>
-                        <h6 id="wind" class="text-golden mb-0">9 km/h<!-- wind --></h6>
+                        <h6 id="wind" class="text-golden mb-0"><!-- wind --></h6>
                       </div>
                       <div>
                         <p class="text-golden text-sm opacity-8 mb-0">Prob. de precipitaciones</p>
-                        <h6 id="rainfall" class="text-golden mb-0">70%<!-- rainfall --></h6>
+                        <h6 id="rainfall" class="text-golden mb-0"><!-- rainfall --></h6>
                       </div>
                     </div>
                   </div>
@@ -112,14 +112,14 @@
                   <div class="card">
                     <div class="card-header mx-4 p-3 text-center">
                       <div class="icon icon-shape icon-lg bg-gradient-info shadow text-center border-radius-lg">
-                        <i id="late_icon" class="material-icons opacity-10">clouds<!-- late_icon --></i>
+                        <i id="late_icon" class="material-icons opacity-10"><!-- late_icon --></i>
                       </div>
                     </div>
                     <div class="card-body pt-0 p-3 text-center text-truncate">
-                      <h3 id="late_temperature" class="text-center mb-0">32 °C<!-- late_temperature --></h3>
-                      <span id="late_forecast" class="text-md">Nubes y sol, con chubascos<!-- late_forecast --></span>
+                      <h3 id="late_temperature" class="text-center mb-0"><!-- late_temperature --></h3>
+                      <span id="late_forecast" class="text-md"><!-- late_forecast --></span>
                       <hr class="horizontal dark my-3">
-                      <h4 id="late_text" class="mb-0 text-md">Tarde<!-- late_text --></h4>
+                      <h4 id="late_text" class="mb-0 text-md"><!-- late_text --></h4>
                     </div>
                   </div>
                 </div>
@@ -127,14 +127,14 @@
                   <div class="card">
                     <div class="card-header mx-4 p-3 text-center">
                       <div class="icon icon-shape icon-lg bg-gradient-info shadow text-center border-radius-lg">
-                        <i id="night_icon" class="material-icons opacity-10">cloud-drizzle<!-- night_icon --></i>
+                        <i id="night_icon" class="material-icons opacity-10"><!-- night_icon --></i>
                       </div>
                     </div>
                     <div class="card-body pt-0 p-3 text-center text-truncate">
-                      <h3 id="night_temperature" class="text-center mb-0">26 °C<!-- night_temperature --></h3>
-                      <span id="night_forecast" class="text-md">Cálido, con lluvia ocasional<!-- night_forecast --></span>
+                      <h3 id="night_temperature" class="text-center mb-0"><!-- night_temperature --></h3>
+                      <span id="night_forecast" class="text-md"><!-- night_forecast --></span>
                       <hr class="horizontal dark my-3">
-                      <h4 id="night_text" class="mb-0 text-md">Noche<!-- night_text --></h4>
+                      <h4 id="night_text" class="mb-0 text-md"><!-- night_text --></h4>
                     </div>
                   </div>
                 </div>
@@ -211,6 +211,10 @@
   <script src="assets/js/core/bootstrap.min.js"></script>
   <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <!-- Referencia a los módulos -->
+  <script src="assets/js/data.js" type="module"></script>
+  <script src="assets/js/weather.js" type="module"></script>
+  
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -224,9 +228,7 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="assets/js/material-dashboard.min.js?v=3.0.4"></script>
-  <!-- Referencia a los módulos -->
-  <script src="assets/js/data.js" type="module"></script>
-  <script src="assets/js/weather.js" type="module"></script>
+
 
   
   
