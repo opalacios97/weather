@@ -1,8 +1,33 @@
 import { weather_data } from './data.js';
 
-let loadDayForecastData = (data = weather_data) => {
+let loadDayForecastData = (data = weather_data, ciudad_select = "guayaquil") => {
 
-    let [gye,amb,ten] = data;
+    let indice = 0;
+
+    if (ciudad_select == "guayaquil"){
+        indice = 0;
+    }
+    else if (ciudad_select == "ambato"){
+        indice = 1;
+    }
+    else if (ciudad_select == "tena"){
+        indice = 2;
+    }
+    else{
+        indice = 0;
+    }
+
+    let data_ciudad = data[indice];
+
+    let {city_code: codigo_ciudad , city: ciudad , date: fecha , maxtemperature: tempmax , mintemperature: tempmin , cloudiness: neblina , wind: viento , rainfall: lluvia , forecast_today: hoy } = data_ciudad;
+
+    let [ciudad_tarde, ciudad_noche] = hoy;
+
+    let {lapse: lapse_tarde , text: text_tarde , temperature: temperature_tarde , forecast: forecast_tarde , icon: icon_tarde} = ciudad_tarde;
+    let {lapse: lapse_noche , text: text_noche , temperature: temperature_noche , forecast: forecast_noche , icon: icon_noche} = ciudad_noche;
+
+
+    /*let [gye,amb,ten] = data;
 
     let {city_code: codigo_ciudad1 , city: ciudad1 , date: fecha1 , maxtemperature: tempmax1 , mintemperature: tempmin1 , cloudiness: neblina1 , wind: viento1 , rainfall: lluvia1 , forecast_today: hoy1 } = gye;
     let {city_code: codigo_ciudad2 , city: ciudad2 , date: fecha2 , maxtemperature: tempmax2 , mintemperature: tempmin2 , cloudiness: neblina2 , wind: viento2 , rainfall: lluvia2 , forecast_today: hoy2 } = amb;        
@@ -18,7 +43,7 @@ let loadDayForecastData = (data = weather_data) => {
     let {lapse: lapse_noche2 , text: text_noche2 , temperature: temperature_noche2 , forecast: forecast_noche2 , icon: icon_noche2} = amb_noche;
     let {lapse: lapse_tarde3 , text: text_tarde3 , temperature: temperature_tarde3 , forecast: forecast_tarde3 , icon: icon_tarde3} = ten_tarde;
     let {lapse: lapse_noche3 , text: text_noche3 , temperature: temperature_noche3 , forecast: forecast_noche3 , icon: icon_noche3} = ten_noche;
-
+    */
 
     let index_ciudad = document.getElementById("city");
     let index_fecha = document.getElementById("date");
@@ -36,29 +61,55 @@ let loadDayForecastData = (data = weather_data) => {
     let index_forecast_noche = document.getElementById("night_forecast");
     let index_text_noche = document.getElementById("night_text");
 
-    index_ciudad.innerHTML = ciudad1;
-    index_fecha.innerHTML = fecha1;
-    index_tempmax.innerHTML = tempmax1;
-    index_tempmin.innerHTML = tempmin1;
-    index_neblina.innerHTML = neblina1;
-    index_viento.innerHTML = viento1;
-    index_lluvia.innerHTML = lluvia1;
-    index_icon_tarde.innerHTML = icon_tarde1;
-    index_temperature_tarde.innerHTML = temperature_tarde1;
-    index_forecast_tarde.innerHTML = forecast_tarde1;
-    index_text_tarde.innerHTML = text_tarde1;
-    index_icon_noche.innerHTML = icon_noche1;
-    index_temperature_noche.innerHTML = temperature_noche1;
-    index_forecast_noche.innerHTML = forecast_noche1;
-    index_text_noche.innerHTML = text_noche1;
-
-
+    index_ciudad.innerHTML = ciudad;
+    index_fecha.innerHTML = fecha;
+    index_tempmax.innerHTML = tempmax;
+    index_tempmin.innerHTML = tempmin;
+    index_neblina.innerHTML = neblina;
+    index_viento.innerHTML = viento;
+    index_lluvia.innerHTML = lluvia;
+    index_icon_tarde.innerHTML = icon_tarde;
+    index_temperature_tarde.innerHTML = temperature_tarde;
+    index_forecast_tarde.innerHTML = forecast_tarde;
+    index_text_tarde.innerHTML = text_tarde;
+    index_icon_noche.innerHTML = icon_noche;
+    index_temperature_noche.innerHTML = temperature_noche;
+    index_forecast_noche.innerHTML = forecast_noche;
+    index_text_noche.innerHTML = text_noche;
 
 }
 
-let loadWeekForecastData = (data = weather_data) => {
 
-    let [gye,amb,ten] = data;
+let loadWeekForecastData = (data = weather_data, ciudad_select = "guayaquil") => {
+
+    let indice = 0;
+
+    if (ciudad_select == "guayaquil"){
+        indice = 0;
+    }
+    else if (ciudad_select == "ambato"){
+        indice = 1;
+    }
+    else if (ciudad_select == "tena"){
+        indice = 2;
+    }
+    else{
+        indice = 0;
+    }
+
+    let data_ciudad = data[indice];
+
+    let {forecast_week: semana_ciudad} = data_ciudad;
+
+    let [dia1_ciudad, dia2_ciudad, dia3_ciudad, dia4_ciudad, dia5_ciudad, dia6_ciudad, dia7_ciudad] = semana_ciudad;
+
+    let {day: dia1_num, text: dia1_letras, date: dia1_fecha, temperature: dia1_temperatura, icon: dia1_icon} = dia1_ciudad;
+
+    let {min: dia1_tempmax, max: dia1_tempmin} = dia1_temperatura;
+    
+    
+    
+    /*let [gye,amb,ten] = data;
 
     let {forecast_week: semana_gye} = gye;
     let {forecast_week: semana_amb} = amb;
@@ -111,44 +162,94 @@ let loadWeekForecastData = (data = weather_data) => {
     let {day: dia6_numT, text: dia6_letrasT, date: dia6_fechaT, temperature: dia6_temperatureT, icon: dia6_iconT} = dia6_ten;
     let {min: dia6_tempmaxT, max: dia6_tempminT} = dia6_temperatureT;
     let {day: dia7_numT, text: dia7_letrasT, date: dia7_fechaT, temperature: dia7_temperatureT, icon: dia7_iconT} = dia7_ten;
-    let {min: dia7_tempmaxT, max: dia7_tempminT} = dia7_temperatureT;
-
-
+    let {min: dia7_tempmaxT, max: dia7_tempminT} = dia7_temperatureT;*/
 
     let mensaje = `
     <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
         <div class="d-flex flex-column">
-           <h6 class="mb-1 text-dark font-weight-bold text-sm">${dia1_letrasG}</h6>
-           <span class="text-xs">${dia1_fechaG}</span>
+           <h6 class="mb-1 text-dark font-weight-bold text-sm">${dia1_letras}</h6>
+           <span class="text-xs">${dia1_fecha}</span>
         </div>
         <div class="d-flex align-items-center ">
-           <span class="font-weight-bold text-dark mx-2">${dia1_tempmaxG}</span> |  <span class="text-dark mx-2">${dia1_tempminG}</span>
-           <div class="ms-4"><i class="material-icons fs-2 me-1 rainy">${dia1_iconG}</i></div>
+           <span class="font-weight-bold text-dark mx-2">${dia1_tempmax}</span> |  <span class="text-dark mx-2">${dia1_tempmin}</span>
+           <div class="ms-4"><i class="material-icons fs-2 me-1 rainy">${dia1_icon}</i></div>
         </div>
     </li>`;
 
     let mensaje_index = document.getElementsByClassName("list-group");
 
     mensaje_index[0].innerHTML = mensaje;
-
-	
-	
+		
 }
 
 
+let citySelection = (data = weather_data) => {
+
+    let [gye, amb, ten] = data;
+
+    let {city: ciudad1} = gye;
+    let {city: ciudad2} = amb;
+    let {city: ciudad3} = ten;
+
+    let mensaje = `
+    <select id="dropdownMenuButton" class="btn bg-gradient-primary dropdown-toggl" name="select">
+      <option value="" selected disabled hidden>Seleccione una ciudad</option>
+      <option id="guayaquil" class="dropdown-item" value="guayaquil">${ciudad1}</option> 
+      <option id="ambato" class="dropdown-item" value="ambato">${ciudad2}</option>
+      <option id="tena" class="dropdown-item" value="tena">${ciudad3}</option>
+    </select>`;
+
+    let mensaje_index = document.getElementsByClassName("dropdown");
+
+    mensaje_index[0].innerHTML = mensaje; 
+
+}        
 
 
 document.addEventListener("DOMContentLoaded", (event) => {
     //Código a ejecutar
 
     loadDayForecastData();
+    citySelection();
+ 
+    let element4 = document.getElementById("dropdownMenuButton");
 
-    let element = document.getElementById("loadinfo");
-
-    element.addEventListener('click', (event) => {
+    element4.addEventListener('change', (event) => {
         //Código a ejecutar
-        loadWeekForecastData();
+        //El event contiene la información del elemento seleccionado
+        let selectedValue = event.target.value 
+        loadDayForecastData(weather_data,selectedValue)
+        
+        let element = document.getElementById("loadinfo");
+        
+        element.addEventListener('click', (event) => {
+            //Código a ejecutar
+            loadWeekForecastData(weather_data,selectedValue);
+        });
     });
+
+    /*let seleccion_user = "";
+ 
+    let element1 = document.getElementById("guayaquil");
+    let element2 = document.getElementById("ambato");
+    let element3 = document.getElementById("tena");
+    let element = document.getElementById("loadinfo");
+    
+    element1.addEventListener('click', (event) => {
+        //Código a ejecutar
+        seleccion_user = "ciudad1";
+    });
+
+    element2.addEventListener('click', (event) => {
+        //Código a ejecutar
+        seleccion_user = "ciudad2";
+    });
+    
+    element3.addEventListener('click', (event) => {
+        //Código a ejecutar
+        seleccion_user = "ciudad3";
+    });*/
+
 
     
 });
