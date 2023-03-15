@@ -228,28 +228,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     });
 
-    /*let seleccion_user = "";
- 
-    let element1 = document.getElementById("guayaquil");
-    let element2 = document.getElementById("ambato");
-    let element3 = document.getElementById("tena");
-    let element = document.getElementById("loadinfo");
-    
-    element1.addEventListener('click', (event) => {
-        //Código a ejecutar
-        seleccion_user = "ciudad1";
-    });
-
-    element2.addEventListener('click', (event) => {
-        //Código a ejecutar
-        seleccion_user = "ciudad2";
-    });
-    
-    element3.addEventListener('click', (event) => {
-        //Código a ejecutar
-        seleccion_user = "ciudad3";
-    });*/
-
-
     
 });
